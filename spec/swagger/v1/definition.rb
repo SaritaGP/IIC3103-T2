@@ -6,5 +6,8 @@ API_V1 = {
   },
   basePath: '/api/v1',
   definitions: {
+    artist: ARTIST_SCHEMA,
+    artists_collection: ARTISTS_COLLECTION_SCHEMA,
+    artist_resource: ARTIST_RESOURCE_SCHEMA,
   }
 }
