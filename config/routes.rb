@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     resources :tracks, except: :update
 
     put '/artists/:id/albums/play', to: 'artists#play'
+    put '/albums/:id/tracks/play', to: 'albums#play'
+    put 'tracks/:id/play', to: 'tracks#play'
   end
 
   mount Rswag::Api::Engine => '/api-docs'
