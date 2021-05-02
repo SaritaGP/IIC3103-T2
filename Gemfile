@@ -38,6 +38,9 @@ group :development, :test do
   gem 'rswag-specs'
   gem 'rubocop'
   gem 'rubocop-rspec'
+  gem 'pry-byebug'
+  gem 'pry-rails'
+
 end
 
 group :development do

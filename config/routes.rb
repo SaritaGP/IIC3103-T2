@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  scope module: 'api/v1', defaults: {format:'json'} do
-    resources :artists, except: :update 
+  scope module: 'api/v1', defaults: { format: 'json' } do
+    resources :artists, except: :update, shallow: true do 
+      resources :albums, only: [:index, :create]
+    end
+    resources :albums, except: :update
   end
 
   mount Rswag::Api::Engine => '/api-docs'
