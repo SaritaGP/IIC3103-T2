@@ -7,7 +7,8 @@ class Api::V1::AlbumSerializer < ActiveModel::Serializer
     :genre,
     :artist_id,
     :artist,
-    :self
+    :self,
+    :tracks
   )
 
   def id
@@ -24,5 +25,9 @@ class Api::V1::AlbumSerializer < ActiveModel::Serializer
 
   def self
     return object.self_url
+  end
+
+  def tracks
+    return "#{object.self_url}/tracks"
   end
 end

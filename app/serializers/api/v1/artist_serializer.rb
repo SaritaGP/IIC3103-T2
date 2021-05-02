@@ -6,7 +6,8 @@ class Api::V1::ArtistSerializer < ActiveModel::Serializer
     :name,
     :age,
     :self,
-    :albums 
+    :albums,
+    :tracks
   )
   def self
     return object.self_url
@@ -17,7 +18,10 @@ class Api::V1::ArtistSerializer < ActiveModel::Serializer
   end
 
   def albums
-    url = "http://localhost:3000/"
-    return "#{url}artists/#{object.identifier}/albums"
+    return "#{object.self_url}/albums"
+  end
+
+  def tracks
+    return "#{object.self_url}/tracks"
   end
 end

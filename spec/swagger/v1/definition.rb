@@ -6,6 +6,9 @@ API_V1 = {
   },
   basePath: '/api/v1',
   definitions: {
+    track: TRACK_SCHEMA,
+    tracks_collection: TRACKS_COLLECTION_SCHEMA,
+    track_resource: TRACK_RESOURCE_SCHEMA,
     album: ALBUM_SCHEMA,
     albums_collection: ALBUMS_COLLECTION_SCHEMA,
     album_resource: ALBUM_RESOURCE_SCHEMA,
