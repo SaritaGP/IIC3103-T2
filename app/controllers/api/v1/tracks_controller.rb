@@ -22,6 +22,12 @@ class Api::V1::TracksController < Api::V1::BaseController
     respond_with track.destroy!
   end
 
+  def play
+    track.times_played += 1
+    track.save!
+    respond_with true
+  end
+
   private
 
   def track

@@ -20,6 +20,14 @@ class Api::V1::AlbumsController < Api::V1::BaseController
     respond_with album.destroy!
   end
 
+  def play
+    album.tracks.each do |track|
+      track.times_played += 1
+      track.save!
+    end
+    respond_with true
+  end
+
   private
 
   def album
