@@ -12,6 +12,9 @@ class Track < ApplicationRecord
 
   def self_url
     url = "http://localhost:3000/"
+    if Rails.env.production?
+      url = "https://iic3103-tarea2-sg.herokuapp.com/"
+    end
     return "#{url}tracks/#{self.identifier}"
   end
 
