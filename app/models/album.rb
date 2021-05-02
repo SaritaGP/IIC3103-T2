@@ -1,6 +1,6 @@
 class Album < ApplicationRecord
   belongs_to :artist
-  has_many :tracks
+  has_many :tracks, dependent: :destroy
   before_validation :encode
   validates :identifier, uniqueness: true
   validates :name, :genre, presence: true

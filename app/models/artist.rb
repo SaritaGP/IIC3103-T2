@@ -1,5 +1,5 @@
 class Artist < ApplicationRecord
-  has_many :albums
+  has_many :albums, dependent: :destroy
   has_many :tracks, through: :albums
   before_validation :encode
   validates :identifier, uniqueness: true

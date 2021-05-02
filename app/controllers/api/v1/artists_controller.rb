@@ -15,6 +15,14 @@ class Api::V1::ArtistsController < Api::V1::BaseController
     respond_with artist.destroy!
   end
 
+  def play
+    artist.tracks.each do |track|
+      track.times_played += 1
+      track.save!
+    end
+    respond_with true
+  end
+
   private
 
   def artist

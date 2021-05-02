@@ -81,6 +81,9 @@ test:
 #
 production:
   <<: *default
-  database: tarea2_production
-  username: tarea2
-  password: <%= ENV['TAREA2_DATABASE_PASSWORD'] %>
+  encoding: utf8
+  min_messages: warning
+  timeout: 5000
+  url: <%= ENV.fetch("DATABASE_URL", "") %>
+
+
